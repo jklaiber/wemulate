@@ -133,7 +133,8 @@ create_default_configuration() {
 ---
 wemulate:
   management_interfaces:
-    - $INTERFACE
+    - enp9s0
+    - enp0s31f6
   db_location: /etc/wemulate/wemulate.db
 EOF
   completed "Default configuration $path with management interface $INTERFACE is generated"
@@ -428,7 +429,8 @@ info "Please follow the steps to use WEmulate on your machine:
       ---
       wemulate:
         management_interfaces:
-            - $INTERFACE
+          - enp9s0
+          - enp0s31f6
         db_location: $CONFIGURATION_DIR/wemulate.db
 
   ${BOLD}${UNDERLINE}Documentation${NO_COLOR}

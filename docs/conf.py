@@ -78,4 +78,4 @@ master_doc = "index"
 # add sourcecode to path
 sys.path.insert(0, os.path.abspath("../wemulate"))
 
-autodoc_mock_imports = ["sqlalchemy", "pyroute2", "netifaces", "path"]
+autodoc_mock_imports = ["sqlalchemy", "pyroute2", "netifaces", "path", "Path"]

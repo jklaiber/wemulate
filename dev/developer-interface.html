@@ -372,6 +372,97 @@ If not, the parameter will be removed in both directions (bidirectional, in-/out
 </section>
 <section id="setting-and-configuration-interface">
 <h2>Setting and Configuration Interface<a class="headerlink" href="#setting-and-configuration-interface" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_interface_ip">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_interface_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#get_interface_ip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_interface_ip" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the ip address of an interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> – Name of the interface.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the ip address as string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_interface_mac_address">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_interface_mac_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#get_interface_mac_address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_interface_mac_address" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the mac address of an interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> – Name of the interface.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the mac address as string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_mgmt_interfaces">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_mgmt_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#get_mgmt_interfaces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_mgmt_interfaces" title="Permalink to this definition"></a></dt>
+<dd><p>Returns all management interfaces saved in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the management interfaces as list of strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_all_interfaces_on_device">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_all_interfaces_on_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#get_all_interfaces_on_device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_all_interfaces_on_device" title="Permalink to this definition"></a></dt>
+<dd><p>Returns all interfaces on the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a list of interfaces.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.add_mgmt_interface">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">add_mgmt_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#add_mgmt_interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.add_mgmt_interface" title="Permalink to this definition"></a></dt>
+<dd><p>Adds an interface as management interfaces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface_name</strong> – Name of the interface</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_non_mgmt_interfaces">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_non_mgmt_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#get_non_mgmt_interfaces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_non_mgmt_interfaces" title="Permalink to this definition"></a></dt>
+<dd><p>Returns all interfaces which usable to connect different devices (all non-mgmt interfaces).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the interfaces as list of strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.check_if_mgmt_interface_set">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">check_if_mgmt_interface_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/device.html#check_if_mgmt_interface_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.check_if_mgmt_interface_set" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.settings.get_db_location">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.settings.</span></span><span class="sig-name descname"><span class="pre">get_db_location</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/settings/config.html#get_db_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.settings.get_db_location" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the database path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the path to the database as string.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading"></a></h2>

@@ -88,6 +88,287 @@
 <p>This part of the documentation covers all the interfaces of WEmulate.</p>
 <section id="database-and-tc-interface">
 <h2>Database and TC Interface<a class="headerlink" href="#database-and-tc-interface" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.add_parameter">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">add_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/add.html#add_parameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.add_parameter" title="Permalink to this definition"></a></dt>
+<dd><p>Add parameters to the already configured parameters on the given connection.
+If a direction is provided, the parameter will be applied only on the given direction.
+If not, the parameter will be applied in both directions (bidirectional, in-/outgoing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection_name</strong> – Name of the connection on which the parameters should be configured.</p></li>
+<li><p><strong>parameters</strong> – Parameters which should be configured.</p></li>
+<li><p><strong>direction</strong> – Direction on which the parameter should be applied (bidirectional if None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.set_parameter">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">set_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/set.html#set_parameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.set_parameter" title="Permalink to this definition"></a></dt>
+<dd><p>Set parameters on the given connection. Replaces all parameters which are configured.
+If a direction is provided, the parameter will be applied only on the given direction.
+If not, the parameter will be applied in both directions (bidirectional, in-/outgoing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection_name</strong> – Name of the connection on which the parameters should be configured.</p></li>
+<li><p><strong>parameters</strong> – Parameters which should be configured.</p></li>
+<li><p><strong>direction</strong> – Direction on which the parameter should be applied (bidirectional if None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.create_or_update_parameters_in_db">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">create_or_update_parameters_in_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ConnectionModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">typing.Dict[str,</span> <span class="pre">typing.Dict[str,</span> <span class="pre">int]]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/common.html#create_or_update_parameters_in_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.create_or_update_parameters_in_db" title="Permalink to this definition"></a></dt>
+<dd><p>Creates and updates parameters in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection</strong> – Connection object on which the updates should be made.</p></li>
+<li><p><strong>parameters</strong> – Parameters which should be updated.</p></li>
+<li><p><strong>direction</strong> – Direction on which the parameter should be applied (bidirectional if None)</p></li>
+<li><p><strong>current_parameters</strong> – Current parameters which should be updated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the current_parameters which are set in the database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.set_parameters_with_tc">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">set_parameters_with_tc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ConnectionModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wemulate/ext/utils/common.html#set_parameters_with_tc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.set_parameters_with_tc" title="Permalink to this definition"></a></dt>
+<dd><p>Set parameters on the host system on the given connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection</strong> – Connection object on which the updates should be made.</p></li>
+<li><p><strong>parameters</strong> – Parameters which should be configured.</p></li>
+<li><p><strong>direction</strong> – Direction on which the parameter should be applied (bidirectional if None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.delete_parameters_in_db">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">delete_parameters_in_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ConnectionModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/common.html#delete_parameters_in_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.delete_parameters_in_db" title="Permalink to this definition"></a></dt>
+<dd><p>Delete specific parameters in db.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameters</strong> – Parameters which should be deleted.</p></li>
+<li><p><strong>current_parameters</strong> – The current parameters of the connection.</p></li>
+<li><p><strong>connection</strong> – Connection object on which the updates should be made.</p></li>
+<li><p><strong>direction</strong> – Direction on which the parameter should be applied (bidirectional if None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the current parameters in the database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_current_applied_parameters">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_current_applied_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wemulate/ext/utils/common.html#get_current_applied_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_current_applied_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the connection object and its current applied parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_name</strong> – The name of the connection</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the connection object (ConnectionModel) and the current_parameters which are currently set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.delete_connection">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">delete_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/delete.html#delete_connection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.delete_connection" title="Permalink to this definition"></a></dt>
+<dd><p>Delete connection with the given name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_name</strong> – Name of the connection which should be deleted.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.delete_parameter">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">delete_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/delete.html#delete_parameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.delete_parameter" title="Permalink to this definition"></a></dt>
+<dd><p>Delete specific parameters on the given connection.
+If a direction is provided, the parameter will be removed only on the given direction.
+If not, the parameter will be removed in both directions (bidirectional, in-/outgoing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection_name</strong> – Name of the connection on which the parameters should be deleted.</p></li>
+<li><p><strong>parameters</strong> – Parameters which should be deleted.</p></li>
+<li><p><strong>direction</strong> – The direction on which the parameter should be removed (bidirectional if None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.reset_connection">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">reset_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/reset.html#reset_connection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.reset_connection" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes all parameter on a specific connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_name</strong> – Name of the connection which should be reset</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.reset_device">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">reset_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/reset.html#reset_device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.reset_device" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes all parameters and connection in the database and on the host system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_physical_interface_names">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_physical_interface_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_logical_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_logical_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_physical_interface_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_physical_interface_names" title="Permalink to this definition"></a></dt>
+<dd><p>Get the physical interface names for the logical interface names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first_logical_interface</strong> – First logical interface name.</p></li>
+<li><p><strong>second_logical_interface</strong> – Second logical interface name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple of strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_logical_interface_by_name">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_logical_interface_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logical_interface_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">LogicalInterfaceModel</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_logical_interface_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_logical_interface_by_name" title="Permalink to this definition"></a></dt>
+<dd><p>Return the logical interface object for a given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logical_interface_name</strong> – Logical interface name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a logical interface object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.connection_exists_in_db">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">connection_exists_in_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#connection_exists_in_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.connection_exists_in_db" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a true if a connection exists in the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_name</strong> – Connection name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a boolean.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_connection_by_name">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_connection_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ConnectionModel</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_connection_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_connection_by_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a a connection object for a connection name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_name</strong> – Connection name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a connection object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_connection_by_id">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_connection_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ConnectionModel</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_connection_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_connection_by_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a a connection object by its unique id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_id</strong> – Connection id.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a connection object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_logical_interface_by_physical_name">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_logical_interface_by_physical_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">physical_interface_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LogicalInterfaceModel</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_logical_interface_by_physical_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_logical_interface_by_physical_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the logical interface object for a physical interface name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>physical_interface_name</strong> – Name of the physical interface.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a logical interface object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_logical_interface_by_id">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_logical_interface_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logical_interface_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LogicalInterfaceModel</span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_logical_interface_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_logical_interface_by_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the logical interface object for the logical interface id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logical_interface_id</strong> – The unique identifier for the specific logical interface.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a logical interface object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wemulate.ext.utils.get_connection_list">
+<span class="sig-prename descclassname"><span class="pre">wemulate.ext.utils.</span></span><span class="sig-name descname"><span class="pre">get_connection_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">ConnectionModel</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/wemulate/ext/utils/retrieve.html#get_connection_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wemulate.ext.utils.get_connection_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns all existing connection objects as a list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a list of connection objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="setting-and-configuration-interface">
 <h2>Setting and Configuration Interface<a class="headerlink" href="#setting-and-configuration-interface" title="Permalink to this heading"></a></h2>

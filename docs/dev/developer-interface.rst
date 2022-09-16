@@ -39,8 +39,6 @@ Setting and Configuration Interface
 .. autofunction:: wemulate.ext.settings.add_mgmt_interface
 .. autofunction:: wemulate.ext.settings.get_non_mgmt_interfaces
 .. autofunction:: wemulate.ext.settings.check_if_mgmt_interface_set
-.. autofunction:: wemulate.ext.settings.get_config
-.. autofunction:: wemulate.ext.settings.get_config_path
 .. autofunction:: wemulate.ext.settings.get_db_location
 
 

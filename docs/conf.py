@@ -54,7 +54,7 @@ source_suffix = [".rst", ".md"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "folder.py"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -78,4 +78,9 @@ master_doc = "index"
 # add sourcecode to path
 sys.path.insert(0, os.path.abspath("../wemulate"))
 
-autodoc_mock_imports = ["sqlalchemy", "pyroute2", "netifaces", "path", "Path"]
+autodoc_mock_imports = [
+    "sqlalchemy",
+    "pyroute2",
+    "netifaces",
+    "wemulate.ext.settings.folder",
+]
